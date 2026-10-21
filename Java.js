@@ -16,17 +16,17 @@ form.addEventListener("submit", function(event) {
 
     // 2. Members ka data (Name ke sath unka sahi Roll Number)
     const validMembers = {
-        "adarsh": "463",
-        "anush": "101",   // Agar HTML me naam 'Anush' hai
-        "anuj": "101",    // Aapke message ke mutabik 'Anuj' bhi handle kiya hai
-        "aditya": "102"
+        Adarsh: "463",
+        Anush: "101",  
+        
+        Aditya: "102"
     };
 
     // 3. Doosra Check: Kya jo naam dala gaya hai, woh valid members ki list mein hai?
     if (validMembers[nameInput] !== undefined) {
         
         // Agar naam sahi hai, toh check karo ki kya roll number us naam se match karta hai
-        const correctRoll = validMembers[nameInput];
+        const correctRoll = validMembers[NameInput];
 
         if (rollInput !== correctRoll) {
             event.preventDefault(); // Galat roll number hone par submit roko
