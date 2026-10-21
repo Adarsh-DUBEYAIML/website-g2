@@ -1,42 +1,25 @@
-// HTML form ko select kiya
-const form = document.getElementById("registre");
+alert("Authorized person only");
+alert("Project of G2");
+const students = [
+    { name: "Anush", roll: "101" },
+    { name: "Aditya", roll: "102" },
+{name:"Adarsh", roll:"463"}
+];
 
-form.addEventListener("submit", function(event) {
-    // Inputs se name aur roll number nikala, aur extra spaces hataye (.trim() se)
-    // .toLowerCase() lagaya taaki agar koi 'adarsh' ya 'ADARSH' likhe toh bhi match ho jaye
-    const NameInput = document.getElementById("name").value.trim().toLowerCase();
-    const rollInput = document.getElementById("roll").value.trim();
+document.getElementById("registre").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // 1. Pehla Check: Agar koi field khali hai
-    if (NameInput === "" || rollInput === "") {
-        event.preventDefault(); // Form submit hone se roko
-        alert("Rukiye! Kripya apna Name aur Roll Number dono bharein.");
-        return; 
-    }
+    const name = document.getElementById("name").value.trim().toLowerCase();
+    const roll = document.getElementById("roll").value.trim();
 
-    // 2. Members ka data (Name ke sath unka sahi Roll Number)
-    const validMembers = {
-        "Adarsh": "463",
-        "Anush": "101",  
-        
-        "Aditya": "102"
-    };
+    const authorized = students.some(student =>
+        student.name.toLowerCase() === name &&
+        student.roll === roll
+    );
 
-    // 3. Doosra Check: Kya jo naam dala gaya hai, woh valid members ki list mein hai?
-    if (validMembers[NameInput] !== undefined) {
-        
-        // Agar naam sahi hai, toh check karo ki kya roll number us naam se match karta hai
-        const correctRoll = validMembers[NameInput];
-
-        if (rollInput !== correctRoll) {
-            event.preventDefault(); // Galat roll number hone par submit roko
-            alert("Access Denied! Is naam ke liye yeh Roll Number galat hai.");
-        }
-        // Agar Naam aur Roll number dono sahi match ho gaye, toh bina ruke 'project.html' khul jayega
-
+    if (authorized) {
+        window.location.href = "project.html";
     } else {
-        // Agar naam list mein hi nahi hai (Adarsh, Anush/Anuj, Aditya ke alawa koi aur hai)
-        event.preventDefault(); // Submit roko
-        alert("Access Denied! you are not 🚫 authorised member of G2.");
+        alert("Invalid Name or Roll Number!");
     }
 });
