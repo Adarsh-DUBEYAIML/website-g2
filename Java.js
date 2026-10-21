@@ -16,10 +16,10 @@ form.addEventListener("submit", function(event) {
 
     // 2. Members ka data (Name ke sath unka sahi Roll Number)
     const validMembers = {
-        Adarsh: "463",
-        Anush: "101",  
+        "Adarsh": "463",
+        "Anush": "101",  
         
-        Aditya: "102"
+        "Aditya": "102"
     };
 
     // 3. Doosra Check: Kya jo naam dala gaya hai, woh valid members ki list mein hai?
