@@ -23,7 +23,7 @@ form.addEventListener("submit", function(event) {
     };
 
     // 3. Doosra Check: Kya jo naam dala gaya hai, woh valid members ki list mein hai?
-    if (validMembers[nameInput] !== undefined) {
+    if (validMembers[NameInput] !== undefined) {
         
         // Agar naam sahi hai, toh check karo ki kya roll number us naam se match karta hai
         const correctRoll = validMembers[NameInput];
