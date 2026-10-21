@@ -37,6 +37,6 @@ form.addEventListener("submit", function(event) {
     } else {
         // Agar naam list mein hi nahi hai (Adarsh, Anush/Anuj, Aditya ke alawa koi aur hai)
         event.preventDefault(); // Submit roko
-        alert("Access Denied! Aap G2 group ke authorized member nahi hain.");
+        alert("Access Denied! you are not 🚫 authorised member of G2.");
     }
 });
