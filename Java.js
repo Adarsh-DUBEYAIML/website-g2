@@ -4,11 +4,11 @@ const form = document.getElementById('registre');
 form.addEventListener('submit', function(event) {
     // Inputs se name aur roll number nikala, aur extra spaces hataye (.trim() se)
     // .toLowerCase() lagaya taaki agar koi 'adarsh' ya 'ADARSH' likhe toh bhi match ho jaye
-    const nameInput = document.getElementById('name').value.trim().toLowerCase();
+    const NameInput = document.getElementById('name').value.trim().toLowerCase();
     const rollInput = document.getElementById('roll').value.trim();
 
     // 1. Pehla Check: Agar koi field khali hai
-    if (nameInput === "" || rollInput === "") {
+    if (NameInput === "" || rollInput === "") {
         event.preventDefault(); // Form submit hone se roko
         alert("Rukiye! Kripya apna Name aur Roll Number dono bharein.");
         return; 
