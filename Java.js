@@ -1,7 +1,7 @@
 alert("Authorized person only");
 alert("Project of G2");
 const students = [
-    { name: "Anush", roll: "101" },
+    { name: "Durvesh", roll: "101" },
     { name: "Aditya", roll: "102" },
 {name:"Adarsh", roll:"463"}
 ];
